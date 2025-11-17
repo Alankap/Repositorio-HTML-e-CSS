@@ -1,0 +1,83 @@
+<!-- Botão fixo estilo Sicoob -->
+<div id="cookie-button">
+    <img src="https://452moodle.julioreis.pro.br/pluginfile.php/30/mod_folder/content/0/cookie-removebg-preview.png?forcedownload=1" alt="Cookies">
+</div>
+
+<!-- Modal -->
+<div id="cookie-modal" class="cookie-modal-hidden">
+    <div class="cookie-modal-overlay"></div>
+
+    <div class="cookie-modal-content">
+        <button class="cookie-modal-close">&times;</button>
+
+        <div class="cookie-modal-body">
+
+            <div class="cookie-menu">
+                <button class="cookie-menu-item active" data-section="sec1">A sua privacidade</button>
+                <button class="cookie-menu-item" data-section="sec2">Cookies de desempenho</button>
+                <button class="cookie-menu-item" data-section="sec3">Cookies estritamente necessários</button>
+                <button class="cookie-menu-item" data-section="sec4">Cookies de funcionalidade</button>
+                <button class="cookie-menu-item" data-section="sec5">Cookies de publicidade</button>
+            </div>
+
+            <div class="cookie-content">
+                <div class="cookie-section active" id="sec1">
+                    <h2>A sua privacidade</h2>
+                    <p>Conteúdo da aba 1...</p>
+                </div>
+                <div class="cookie-section" id="sec2">
+                    <h2>Cookies de desempenho</h2>
+                    <p>Conteúdo da aba 2...</p>
+                </div>
+                <div class="cookie-section" id="sec3">
+                    <h2>Cookies estritamente necessários</h2>
+                    <p>Conteúdo da aba 3...</p>
+                </div>
+                <div class="cookie-section" id="sec4">
+                    <h2>Cookies de funcionalidade</h2>
+                    <p>Conteúdo da aba 4...</p>
+                </div>
+                <div class="cookie-section" id="sec5">
+                    <h2>Cookies de publicidade</h2>
+                    <p>Conteúdo da aba 5...</p>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+<script>
+    // Abrir modal
+    document.addEventListener("DOMContentLoaded", function() {
+        const btn = document.getElementById("cookie-button");
+        const modal = document.getElementById("cookie-modal");
+        const close = document.querySelector(".cookie-modal-close");
+        const overlay = document.querySelector(".cookie-modal-overlay");
+
+        btn.addEventListener("click", () => {
+            modal.classList.remove("cookie-modal-hidden");
+        });
+
+        close.addEventListener("click", () => {
+            modal.classList.add("cookie-modal-hidden");
+        });
+
+        overlay.addEventListener("click", () => {
+            modal.classList.add("cookie-modal-hidden");
+        });
+
+        // Troca de abas
+        document.querySelectorAll(".cookie-menu-item").forEach(button => {
+            button.addEventListener("click", () => {
+                document.querySelectorAll(".cookie-menu-item").forEach(b => b.classList.remove("active"));
+                button.classList.add("active");
+
+                const section = button.dataset.section;
+
+                document.querySelectorAll(".cookie-section").forEach(sec => sec.classList.remove("active"));
+                document.getElementById(section).classList.add("active");
+            });
+        });
+    });
+</script>
