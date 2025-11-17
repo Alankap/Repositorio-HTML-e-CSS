@@ -1,0 +1,117 @@
+/* Botão escondido por padrão */
+#cookie-button {
+    display: none;
+}
+
+/* Modal sempre segue a classe hidden */
+.cookie-modal-hidden {
+    display: none !important;
+}
+
+/* Exibir SOMENTE o botão na página inicial */
+.path-site.pagelayout-frontpage #cookie-button {
+    display: block;
+}
+
+
+/* BOTÃO FIXO */
+#cookie-button {
+    position: fixed;
+    bottom: 25px;
+    left: 25px;
+    width: 60px;
+    height: 60px;
+    cursor: pointer;
+    z-index: 9999;
+}
+
+#cookie-button img {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.25);
+}
+
+/* MODAL */
+#cookie-modal.cookie-modal-hidden {
+    display: none;
+}
+
+#cookie-modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 99999;
+}
+
+.cookie-modal-overlay {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.6);
+}
+
+.cookie-modal-content {
+    position: relative;
+    width: 70%;
+    max-width: 900px;
+    background: #fff;
+    margin: 60px auto;
+    padding: 20px;
+    border-radius: 8px;
+    z-index: 999999;
+}
+
+.cookie-modal-close {
+    position: absolute;
+    top: 12px;
+    right: 12px;
+    font-size: 30px;
+    border: none;
+    background: transparent;
+    cursor: pointer;
+}
+
+.cookie-modal-body {
+    display: flex;
+}
+
+/* MENU LATERAL */
+.cookie-menu {
+    width: 30%;
+    border-right: 1px solid #ccc;
+    padding-right: 20px;
+}
+
+.cookie-menu-item {
+    width: 100%;
+    display: block;
+    text-align: left;
+    padding: 12px 15px;
+    border: none;
+    background: #f4f4f4;
+    margin-bottom: 6px;
+    cursor: pointer;
+    border-radius: 5px;
+    font-weight: bold;
+}
+
+.cookie-menu-item.active {
+    background: #e1e1e1;
+}
+
+/* CONTEÚDO */
+.cookie-content {
+    width: 70%;
+    padding-left: 20px;
+}
+
+.cookie-section {
+    display: none;
+}
+
+.cookie-section.active {
+    display: block;
+}
